@@ -12,11 +12,12 @@
             const name = document.getElementById("txtName").value
             const country = document.getElementById("country").value
             const selections = document.getElementById("hobbies")
-            for(i = 0; i<selections.options.length;i++)
-            {
-                alert(selections.options);
+            for(i=0;i<selections.options.length;i++){
+                const opt = selections.options[i]
+                if(opt.selected)
+                    alert(opt.value)
+                alert()
             }
-
             //alert("Heloo " + name + " from " + country)
             const status = document.getElementById("status")
             status.innerHTML = "Heloo " + name + " from " + country + " " + hobbies
