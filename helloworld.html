@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHi(){
+            const name = document.getElementById("txtName").value
+            const country = document.getElementById("country").value
+            const selections = document.getElementById("hobbies")
+            for(i = 0; i<selections.options.length;i++)
+            {
+                alert(selections.options);
+            }
+
+            //alert("Heloo " + name + " from " + country)
+            const status = document.getElementById("status")
+            status.innerHTML = "Heloo " + name + " from " + country + " " + hobbies
+        }
+    </script>
+    <h1>Hello world!</h1>
+    <input type="text" id="txtName" size="15" placeholder="Name">
+    <br>
+    <select id="country">
+        <option value="Vietnam">Vietnam</option>
+        <option value="Singapore">Singapore</option>
+    </select>
+    <br>
+    <select id="hobbies" multiple>
+        <option value="Ga ran">Ga ran</option>
+        <option value="Pho">Pho</option>
+        <option value="Pizza">Pizza</option>
+    </select>
+    <br>
+
+    <input type="button" value="Ok" onclick="sayHi()">
+    <hr>
+    <h1 style="color:red ;font-size: 15px;" id="status"></h1>
+</body>
+</html>
