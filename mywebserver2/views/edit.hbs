@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <h1>New Employee</h1>
+    <form action="/edit" method="post">
+        <input type="hidden" name="txtId" value="{{champ.id}}">
+        Name <input type="text" name="txtName" value="{{champ.name}}">
+        <span style="color: red;">{{errorMsg}}</span> 
+        <br>
+        <select id="country" name="country" value="{{champ.country}}">
+            <option value="Tay Ho">Tay Ho</option>
+            <option value="Ba Dinh">Ba Dinh</option>
+        </select>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <script>
+        function setComboValue(value)
+        {
+            let combo = document.getElementById("country")
+            combo.value = value
+        }
+        setComboValue('{{champ.country}}')
+    </script>
+</body>
+</html>

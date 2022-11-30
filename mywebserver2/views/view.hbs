@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Champion List</title>
+</head>
+<body>
+    <div class="container">
+    <h1>All Champions</h1>
+    <form action="/search" method="post">
+        <input type="text" name="txtName"  placeholder="Enter name to search" size="30" 
+            style="margin: 10px;">
+        <input type="submit" value="search">
+    </form>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#each ds}}
+                <tr>
+                <td style="color: #CC66CC;">
+                    <a href="/delete?name={{name}}" onclick="return confirm('Are you sure?')">{{name}}</a>
+                </td>
+                    {{#if country}}
+                        <td style="color: #FF3366;">{{country}}</td>
+                    {{else}}
+                        <td style="color:antiquewhite">Not available</td>
+                    {{/if}}
+                <td><a href="/edit?id={{id}}">Edit</a></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
