@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>View all Products</h1>
+    <form action="/search" method="post">
+        <input type="text" name="txtName" placeholder="Name to search" id="">
+        <input type="submit" value="Search">
+    </form>
+    <ul>
+        {{#each results}}
+            <li>
+                {{name}}
+                <br>
+                <img src="{{pictureURL}}" width="150" height="100" alt="">
+                <br>
+                <a href="/delete?id={{_id}}" onclick="return confirm('Are you sure?')">Delete</a> 
+                {{!-- _id la ten truong` cua cot trong database --}}
+                <a href="/edit?id={{_id}}" style="color:antiquewhite;" onclick="return confirm('Are you sure?')">Edit</a> 
+            </li>
+            <br><br><br>
+        {{/each}}
+    </ul>
+</body>
+</html>
